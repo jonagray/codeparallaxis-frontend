@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <React.Fragment>
       {process.browser && <Navbar color="light" light expand="md">
-        <Link href="/">
+        <Link href="/blogs">
           <NavLink style={{ cursor: 'pointer' }} className="font-weight-bold">{APP_NAME}</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
