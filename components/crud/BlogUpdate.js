@@ -14,13 +14,10 @@ import { API } from '../../config';
 
 const BlogUpdate = ({ router }) => {
     const [body, setBody] = useState('');
-
     const [categories, setCategories] = useState([]);
     const [tags, setTags] = useState([]);
-
-    const [checked, setChecked] = useState([]); // categories
-    const [checkedTag, setCheckedTag] = useState([]); // tags
-
+    const [checked, setChecked] = useState([]);
+    const [checkedTag, setCheckedTag] = useState([]);
     const [values, setValues] = useState({
         title: '',
         error: '',
@@ -176,7 +173,6 @@ const BlogUpdate = ({ router }) => {
     };
 
     const handleChange = name => e => {
-        // console.log(e.target.value);
         const value = name === 'photo' ? e.target.files[0] : e.target.value;
         formData.set(name, value);
         setValues({ ...values, [name]: value, formData, error: '' });
@@ -195,10 +191,8 @@ const BlogUpdate = ({ router }) => {
             } else {
                 setValues({ ...values, title: '', success: `Blog titled "${data.title}" is successfully updated` });
                 if (isAuth() && isAuth().role === 1) {
-                    // Router.replace(`/admin/crud/${router.query.slug}`);
                     Router.replace(`/admin`);
                 } else if (isAuth() && isAuth().role === 0) {
-                    // Router.replace(`/user/crud/${router.query.slug}`);
                     Router.replace(`/user`);
                 }
             }
@@ -265,7 +259,6 @@ const BlogUpdate = ({ router }) => {
                         <div className="form-group pb-2">
                             <h5>Featured image</h5>
                             <hr />
-
                             <small className="text-muted">Max size: 1mb</small>
                             <br />
                             <label className="btn btn-outline-info">
@@ -277,7 +270,6 @@ const BlogUpdate = ({ router }) => {
                     <div>
                         <h5>Categories</h5>
                         <hr />
-
                         <ul style={{ maxHeight: '200px', overflowY: 'scroll' }}>{showCategories()}</ul>
                     </div>
                     <div>

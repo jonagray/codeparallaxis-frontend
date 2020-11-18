@@ -19,7 +19,6 @@ const UserProfile = ({ user, blogs, query }) => {
             <meta property="og:type" content="webiste" />
             <meta property="og:url" content={`${DOMAIN}/profile/${query.username}`} />
             <meta property="og:site_name" content={`${APP_NAME}`} />
-
             <meta property="og:image" content={`${DOMAIN}/static/images/seoblog.jpg`} />
             <meta property="og:image:secure_url" content={`${DOMAIN}/static/images/seoblog.jpg`} />
             <meta property="og:image:type" content="image/jpg" />
@@ -90,7 +89,7 @@ const UserProfile = ({ user, blogs, query }) => {
                                         Message {user.name}
                                     </h5>
                                     <br />
-                                    <ContactForm authorEmail={user.email}/>
+                                    <ContactForm authorEmail={user.email} />
                                 </div>
                             </div>
                         </div>
@@ -102,12 +101,10 @@ const UserProfile = ({ user, blogs, query }) => {
 };
 
 UserProfile.getInitialProps = ({ query }) => {
-    // console.log(query);
     return userPublicProfile(query.username).then(data => {
         if (data.error) {
             console.log(data.error);
         } else {
-            // console.log(data);
             return { user: data.user, blogs: data.blogs, query };
         }
     });
