@@ -11,7 +11,6 @@ import DisqusThread from '../../components/DisqusThread';
 
 const SingleBlog = ({ blog, query }) => {
     const [related, setRelated] = useState([]);
-
     const loadRelated = () => {
         listRelated({ blog }).then(data => {
             if (data.error) {
@@ -38,7 +37,6 @@ const SingleBlog = ({ blog, query }) => {
             <meta property="og:type" content="webiste" />
             <meta property="og:url" content={`${DOMAIN}/blogs/${query.slug}`} />
             <meta property="og:site_name" content={`${APP_NAME}`} />
-
             <meta property="og:image" content={`${API}/blog/photo/${blog.slug}`} />
             <meta property="og:image:secure_url" ccontent={`${API}/blog/photo/${blog.slug}`} />
             <meta property="og:image:type" content="image/jpg" />
@@ -122,7 +120,7 @@ const SingleBlog = ({ blog, query }) => {
                         </div>
 
                         <div className="container">
-                            <h4 className="text-center pt-5 pb-5 h2">Related blogs</h4>
+                            <h4 className="text-center pt-5 pb-5 h2">Related Posts</h4>
                             <div className="row">{showRelatedBlog()}</div>
                         </div>
 
@@ -141,7 +139,6 @@ SingleBlog.getInitialProps = ({ query }) => {
         if (data.error) {
             console.log(data.error);
         } else {
-            // console.log('GET INITIAL PROPS IN SINGLE BLOG', data);
             return { blog: data, query };
         }
     });

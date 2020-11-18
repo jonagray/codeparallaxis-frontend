@@ -20,7 +20,7 @@ const Index = () => {
                     <div className="row">
                         <div className="col-md-12 text-center pt-2 pb-2">
                             <p className="lead">
-                                Parallax - the effect whereby the position or direction of an object appears to differ when viewed from different positions. 
+                                Parallax - the effect whereby the position or direction of an object appears to differ when viewed from different positions.
                             </p>
                         </div>
                     </div>

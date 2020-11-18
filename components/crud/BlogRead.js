@@ -5,7 +5,7 @@ import { getCookie, isAuth } from '../../actions/auth';
 import { list, removeBlog } from '../../actions/blog';
 import moment from 'moment';
 
-const BlogRead = ({username}) => {
+const BlogRead = ({ username }) => {
   const [blogs, setBlogs] = useState([]);
   const [message, setMessage] = useState('');
   const token = getCookie('token');
@@ -16,13 +16,13 @@ const BlogRead = ({username}) => {
 
   const loadBlogs = () => {
     list(username).then(data => {
-        if (data.error) {
-            console.log(data.error);
-        } else {
-            setBlogs(data);
-        }
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setBlogs(data);
+      }
     });
-};
+  };
 
   const deleteBlog = (slug) => {
     removeBlog(slug, token).then(data => {
@@ -36,7 +36,7 @@ const BlogRead = ({username}) => {
   };
 
   const deleteConfirm = (slug) => {
-    let answer = window.confirm('Are you sure you want to delete this blog?');
+    let answer = window.confirm('Are you sure you want to delete this post?');
     if (answer) {
       deleteBlog(slug);
     };
@@ -60,20 +60,20 @@ const BlogRead = ({username}) => {
 
   const showAllBlogs = () => {
     return blogs.map((blog, i) => {
-        return (
-            <div key={i} className="pb-5">
-                <h3>{blog.title}</h3>
-                <p className="mark">
-                    Written by {blog.postedBy.name} | Published on {moment(blog.updatedAt).fromNow()}
-                </p>
-                <button className="btn btn-sm btn-danger" onClick={() => deleteConfirm(blog.slug)}>
-                    Delete
-                </button>
-                {showUpdateButton(blog)}
-            </div>
-        );
+      return (
+        <div key={i} className="pb-5">
+          <h3>{blog.title}</h3>
+          <p className="mark">
+            Written by {blog.postedBy.name} | Published on {moment(blog.updatedAt).fromNow()}
+          </p>
+          <button className="btn btn-sm btn-danger" onClick={() => deleteConfirm(blog.slug)}>
+            Delete
+          </button>
+          {showUpdateButton(blog)}
+        </div>
+      );
     });
-};
+  };
 
   return (
     <React.Fragment>

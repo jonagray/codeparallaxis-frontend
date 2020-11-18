@@ -24,7 +24,6 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
             <meta property="og:type" content="webiste" />
             <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
             <meta property="og:site_name" content={`${APP_NAME}`} />
-
             <meta property="og:image" content={`${DOMAIN}/static/images/seo-blog.jpg`} />
             <meta property="og:image:secure_url" content={`${DOMAIN}/static/images/seo-blog.jpg`} />
             <meta property="og:image:type" content="image/jpg" />
@@ -55,10 +54,8 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
         );
     };
 
-
     const showAllBlogs = () => {
         return blogs.map((blog, i) => {
-            // ()
             return (
                 <article key={i}>
                     <Card blog={blog} />
@@ -101,7 +98,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                         <header>
                             <div className="col-md-12 pt-3">
                                 <h1 className="display-4 font-weight-bold text-center">
-                                    Programming blogs and tutorials
+                                    Posts
                                 </h1>
                             </div>
                             <section>
@@ -113,12 +110,15 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                             </section>
                         </header>
                     </div>
+
                     <div className="container-fluid">
                         {showAllBlogs()}
                     </div>
+
                     <div className="container-fluid">
                         {showLoadedBlogs()}
                     </div>
+
                     <div className="text-center pt-5 pb-5">
                         {loadMoreButton()}
                     </div>

@@ -8,7 +8,6 @@ import { GOOGLE_CLIENT_ID } from '../../config';
 const LoginGoogle = () => {
 
   const responseGoogle = response => {
-    // console.log(response);
     const tokenId = response.tokenId;
     const user = { tokenId };
 

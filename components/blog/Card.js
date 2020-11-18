@@ -36,6 +36,7 @@ const Card = ({ blog }) => {
                     | Published {moment(blog.updatedAt).fromNow()}
                 </p>
             </section>
+
             <section>
                 {showBlogCategories(blog)}
                 {showBlogTags(blog)}

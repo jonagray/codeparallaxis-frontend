@@ -22,21 +22,19 @@ const SigninComponent = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // console.table({ name, email, password, error, loading, message, showForm });
         setValues({ ...values, loading: true, error: false });
         const user = { email, password };
-
         signin(user).then(data => {
             if (data.error) {
                 setValues({ ...values, error: data.error, loading: false });
             } else {
-              authenticate(data, () => {
-                if (isAuth() && isAuth().role === 1) {
-                    Router.push(`/admin`);
-                } else {
-                    Router.push('/user');
-                }
-              });
+                authenticate(data, () => {
+                    if (isAuth() && isAuth().role === 1) {
+                        Router.push(`/admin`);
+                    } else {
+                        Router.push('/user');
+                    }
+                });
             }
         });
     };
@@ -52,7 +50,7 @@ const SigninComponent = () => {
     const signinForm = () => {
         return (
             <form onSubmit={handleSubmit}>
- 
+
                 <div className="form-group">
                     <input
                         value={email}

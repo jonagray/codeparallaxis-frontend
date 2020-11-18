@@ -17,19 +17,12 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+import '.././node_modules/nprogress/nprogress.css';
 import Search from './blog/Search';
 
-Router.onRouteChangeStart = () => {
-  NProgress.start();
-};
-
-Router.onRouteChangeComplete = () => {
-  NProgress.done();
-};
-
-Router.onRouteChangeError = () => {
-  NProgress.done();
-};
+Router.onRouteChangeStart = url => NProgress.start();
+Router.onRouteChangeComplete = url => NProgress.done();
+Router.onRouteChangeError = url => NProgress.done();
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -102,7 +95,7 @@ const Header = () => {
 
             <NavItem>
               <a href="/user/crud/blog" className="btn btn-primary text-light">
-                New Blog
+                New Post
               </a>
             </NavItem>
           </Nav>

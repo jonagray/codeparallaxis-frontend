@@ -80,7 +80,7 @@ const Category = () => {
 
   const showSuccess = () => {
     if (success) {
-      return <p className="text-success">Category is created</p>;
+      return <p className="text-success">Category has been created</p>;
     }
   };
 
@@ -92,7 +92,7 @@ const Category = () => {
 
   const showRemoved = () => {
     if (removed) {
-      return <p className="text-danger">Category is removed</p>;
+      return <p className="text-danger">Category has been removed</p>;
     }
   };
 

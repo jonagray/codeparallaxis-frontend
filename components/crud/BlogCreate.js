@@ -16,7 +16,6 @@ const CreateBlog = ({ router }) => {
     if (typeof window === 'undefined') {
       return false;
     }
-
     if (localStorage.getItem('blog')) {
       return JSON.parse(localStorage.getItem('blog'));
     } else {
@@ -26,10 +25,8 @@ const CreateBlog = ({ router }) => {
 
   const [categories, setCategories] = useState([]);
   const [tags, setTags] = useState([]);
-
-  const [checked, setChecked] = useState([]) // categories
-  const [checkedTag, setCheckedTag] = useState([]) // tags
-
+  const [checked, setChecked] = useState([])
+  const [checkedTag, setCheckedTag] = useState([])
   const [body, setBody] = useState(blogFromLS());
   const [values, setValues] = useState({
     error: '',
@@ -71,14 +68,13 @@ const CreateBlog = ({ router }) => {
   };
 
   const publishBlog = e => {
-    setValues({...values, loading: true})
+    setValues({ ...values, loading: true })
     e.preventDefault();
-    // console.log('ready to publishBlog');
     createBlog(formData, token).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error, loading: false });
       } else {
-        setValues({ ...values, loading: false, title: '', error: '', success: `A new blog titled ${data.title} has been created` });
+        setValues({ ...values, loading: false, title: '', error: '', success: `A new post titled ${data.title} has been created` });
         setBody('');
         setCategories([]);
         setTags([]);
@@ -87,14 +83,12 @@ const CreateBlog = ({ router }) => {
   };
 
   const handleChange = name => e => {
-    // console.log(e.target.value);
     const value = name === 'photo' ? e.target.files[0] : e.target.value;
     formData.set(name, value);
     setValues({ ...values, [name]: value, formData, error: '' });
   };
 
   const handleBody = e => {
-    // console.log(e);
     setBody(e);
     formData.set('body', e);
     if (typeof window !== 'undefined') {
@@ -219,7 +213,6 @@ const CreateBlog = ({ router }) => {
             <div className="form-group pb-2">
               <h5>Featured image</h5>
               <hr />
-
               <small className="text-muted">Max size: 1mb</small>
               <label className="btn btn-outline-info">
                 Upload featured image
