@@ -19,6 +19,7 @@ import {
 } from 'reactstrap';
 import '.././node_modules/nprogress/nprogress.css';
 import Search from './blog/Search';
+import '../static/css/styles.scss';
 
 Router.onRouteChangeStart = url => NProgress.start();
 Router.onRouteChangeComplete = url => NProgress.done();
@@ -33,9 +34,9 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <Navbar color="light" light expand="md">
+      <Navbar light expand="md">
         <Link href="/">
-          <NavLink className="font-weight-bold">{APP_NAME}</NavLink>
+          <NavLink style={{color: "white"}} className="header-variables font-weight-bold">{APP_NAME}</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -43,13 +44,13 @@ const Header = () => {
             <React.Fragment>
               <NavItem>
                 <Link href="/blogs">
-                  <NavLink>Blogs</NavLink>
+                  <NavLink style={{color: "white"}} className="header-variables">Blogs</NavLink>
                 </Link>
               </NavItem>
 
               <NavItem>
                 <Link href="/contact">
-                  <NavLink>Contact</NavLink>
+                  <NavLink style={{color: "white"}} className="header-variables">Contact</NavLink>
                 </Link>
               </NavItem>
             </React.Fragment>
@@ -58,12 +59,12 @@ const Header = () => {
               <React.Fragment>
                 <NavItem>
                   <Link href="/signin">
-                    <NavLink>Signin</NavLink>
+                    <NavLink style={{color: "white"}} className="header-variables">Signin</NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link href="/signup">
-                    <NavLink>Signup</NavLink>
+                    <NavLink style={{color: "white"}} className="header-variables">Signup</NavLink>
                   </Link>
                 </NavItem>
               </React.Fragment>
@@ -72,7 +73,7 @@ const Header = () => {
             {isAuth() && isAuth().role === 0 && (
               <NavItem>
                 <Link href="/user">
-                  <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
+                  <NavLink style={{color: "white"}} className="header-variables">{`${isAuth().name}'s Dashboard`}</NavLink>
                 </Link>
               </NavItem>
             )}
@@ -80,21 +81,21 @@ const Header = () => {
             {isAuth() && isAuth().role === 1 && (
               <NavItem>
                 <Link href="/admin">
-                  <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
+                  <NavLink style={{color: "white"}} className="header-variables">{`${isAuth().name}'s Dashboard`}</NavLink>
                 </Link>
               </NavItem>
             )}
 
             {isAuth() && (
               <NavItem>
-                <NavLink style={{ cursor: 'pointer' }} onClick={() => signout(() => Router.replace(`/signin`))}>
+                <NavLink style={{color: "white"}} className="header-variables" onClick={() => signout(() => Router.replace(`/signin`))}>
                   Signout
                 </NavLink>
               </NavItem>
             )}
 
             <NavItem>
-              <a href="/user/crud/blog" className="btn btn-primary text-light">
+              <a href="/user/crud/blog" className="pt-2 btn btn-outline-warning">
                 New Post
               </a>
             </NavItem>

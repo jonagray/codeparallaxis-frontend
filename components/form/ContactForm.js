@@ -79,7 +79,7 @@ const ContactForm = ({ authorEmail }) => {
                 </div>
 
                 <div>
-                    <button className="btn btn-primary">{buttonText}</button>
+                    <button className="btn btn-warning">{buttonText}</button>
                 </div>
             </form>
         );

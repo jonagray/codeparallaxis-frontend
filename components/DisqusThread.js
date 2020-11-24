@@ -46,7 +46,7 @@ class DisqusThread extends React.Component {
       window.disqus_title = title;
       window.disqus_url = WEBSITE_URL + path;
     }
-    return <div {...other} id="disqus_thread" />;
+    return <div style={{backgroundColor: "rgb(234,240,240)", borderRadius: 5, padding: 20}} {...other} id="disqus_thread" />;
   }
 }
 

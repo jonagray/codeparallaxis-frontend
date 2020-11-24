@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import getConfig from 'next/config';
+import '../static/css/styles.scss';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -31,7 +32,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="/static/css/styles.css" />
           <script dangerouslySetInnerHTML={this.setGoogleTags()}></script>
         </Head>
-          <body>
+          <body className="bg-gradient-cold">
             <Main />
             <NextScript />
           </body>
