@@ -47,7 +47,14 @@ $gradients: map-merge((
   @include text-gradient(".text-gradient-#{$gradient}", $value);
 }
 
+// Variables
 $font-size: 42px;
+$small-text-color: #ffffff;
+
+.standard-text-formatting {
+  color: $small-text-color;
+}
+
 .example {
   font-size: $font-size;
   color: white
@@ -69,3 +76,70 @@ $font-size: 42px;
 .header-text:hover {
   color: lightcoral;
 }
+
+.mark-container {
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.mark-formatting {
+  color: $small-text-color;
+  // font-weight: bold;
+}
+
+.link-formatting {
+  color: #f0ad4e;
+  font-style: italic;
+}
+
+.blog-title {
+  color: white;
+}
+
+.excerpt-formatting {
+  color: $small-text-color;
+}
+
+.blog-text-background {
+  background-color: rgb(234,240,240);
+}
+
+.blog-text-container {
+  background-color: rgba(255, 255, 255, .55);  
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.new-blog-text-container {
+  background-color: rgba(255, 255, 255, .55);  
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.tag-blog-text-container {
+  background-color: rgba(255, 255, 255, .55);  
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.dashboard-text-container {
+  background-color: rgba(255, 255, 255, .25);  
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.flex-fill {
+  height: 100%;
+}
+
+// doesnt import everything correctly, style hard-coded
+// .disqus-background-formatting {
+//   background-color: rgb(234,240,240);
+//   border-radius: 5;
+//   padding: 20
+// }
+

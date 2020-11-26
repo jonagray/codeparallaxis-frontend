@@ -3,6 +3,7 @@ import { signup, isAuth, preSignup } from '../../actions/auth';
 import Router from 'next/router';
 import Link from 'next/link';
 import LoginGoogle from './LoginGoogle';
+import '../../static/css/styles.scss';
 
 const SignupComponent = () => {
     const [values, setValues] = useState({
@@ -100,7 +101,7 @@ const SignupComponent = () => {
             {showForm && signupForm()}
             <br />
             <br />
-            <p>Or signup with google</p>
+            <p className="blog-title">Or signup with google</p>
             <LoginGoogle />
             {/* <Link href="/auth/password/forgot">
                 <a className="btn btn-outline-danger btn-sm">Forgot password</a>

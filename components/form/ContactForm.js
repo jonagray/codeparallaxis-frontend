@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { emailContactForm } from '../../actions/form';
+import '../../static/css/styles.scss';
 
 const ContactForm = ({ authorEmail }) => {
     const [values, setValues] = useState({
@@ -50,7 +51,7 @@ const ContactForm = ({ authorEmail }) => {
     const contactForm = () => {
         return (
             <form onSubmit={clickSubmit} className="pb-5">
-                <div className="form-group">
+                <div className="form-group blog-title">
                     <label className="lead">Message</label>
                     <textarea
                         onChange={handleChange('message')}
@@ -62,12 +63,12 @@ const ContactForm = ({ authorEmail }) => {
                     ></textarea>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group blog-title">
                     <label className="lead">Name</label>
                     <input type="text" onChange={handleChange('name')} className="form-control" value={name} required />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group blog-title">
                     <label className="lead">Email</label>
                     <input
                         type="email"

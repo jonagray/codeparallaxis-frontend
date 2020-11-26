@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { DISQUS_SHORTNAME, DOMAIN } from '../config';
+import '../static/css/styles.scss';
 
 const SHORTNAME = DISQUS_SHORTNAME;
 const WEBSITE_URL = DOMAIN;

@@ -6,6 +6,8 @@ import { API, DOMAIN, APP_NAME } from '../../config';
 import renderHTML from 'react-render-html';
 import moment from 'moment';
 import Card from '../../components/blog/Card';
+import '../../static/css/styles.scss';
+
 
 const Category = ({ category, blogs, query }) => {
   const head = () => {
@@ -32,10 +34,10 @@ const Category = ({ category, blogs, query }) => {
       {head()}
       <Layout>
         <main>
-          <div className="container-fluid text-center">
+          <div className="container-fluid">
             <header>
               <div className="col-md-12 pt-3">
-                <h1 className="display-4 font-weight-bold">{category.name}</h1>
+                <h1 className="display-4 font-weight-bold blog-title text-center pb-5">{category.name}</h1>
                 {blogs.map((b, i) => (
                   <div>
                     <Card key={i} blog={b} />

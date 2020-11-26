@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { listBlogsWithCategoriesAndTags } from '../../actions/blog';
 import Card from '../../components/blog/Card';
 import { API, DOMAIN, APP_NAME } from '../../config';
+import '../../static/css/styles.scss';
 
 const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, router }) => {
     const head = () => (
@@ -97,7 +98,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                     <div className="container-fluid">
                         <header>
                             <div className="col-md-12 pt-3">
-                                <h1 className="display-4 font-weight-bold text-center">
+                                <h1 className="display-4 font-weight-bold text-center blog-title">
                                     Posts
                                 </h1>
                             </div>

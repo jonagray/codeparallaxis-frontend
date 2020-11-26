@@ -36,7 +36,7 @@ const Header = () => {
     <React.Fragment>
       <Navbar light expand="md">
         <Link href="/">
-          <NavLink style={{color: "white"}} className="header-variables font-weight-bold">{APP_NAME}</NavLink>
+          <NavLink style={{color: "#f0ad4e"}} className="header-variables font-weight-bold">{APP_NAME}</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
