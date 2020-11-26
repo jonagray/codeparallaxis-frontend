@@ -10,6 +10,7 @@ import { createBlog } from '../../actions/blog';
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 import '../../node_modules/react-quill/dist/quill.snow.css';
 import { QuillModules, QuillFormats } from '../../helpers/quill';
+import '../../static/css/styles.scss';
 
 const CreateBlog = ({ router }) => {
   const blogFromLS = () => {
@@ -152,7 +153,7 @@ const CreateBlog = ({ router }) => {
 
   const createBlogForm = () => {
     return (
-      <form onSubmit={publishBlog}>
+      <form className="new-blog-text-container" onSubmit={publishBlog}>
         <div className="form-group">
           <label className="text-muted">Title</label>
           <input type="text" className="form-control" value={title} onChange={handleChange('title')} />
@@ -169,7 +170,7 @@ const CreateBlog = ({ router }) => {
         </div>
 
         <div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-warning">
             Publish
                     </button>
         </div>
@@ -201,23 +202,23 @@ const CreateBlog = ({ router }) => {
       <div className="row">
         <div className="col-md-8">
           {createBlogForm()}
-          <div className="pt-3">
+          <div>
             {showError()}
             {showSuccess()}
             {showLoading()}
           </div>
         </div>
 
-        <div className="col-md-4">
+        <div className="col-md-4 tag-blog-text-container">
           <div>
             <div className="form-group pb-2">
               <h5>Featured image</h5>
               <hr />
-              <small className="text-muted">Max size: 1mb</small>
-              <label className="btn btn-outline-info">
+              <label className="btn btn-warning mr-3">
                 Upload featured image
                                 <input onChange={handleChange('photo')} type="file" accept="image/*" hidden />
               </label>
+              <small className="text-muted h6">Max size: 1mb</small>
             </div>
           </div>
           <div>

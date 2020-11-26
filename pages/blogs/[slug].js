@@ -8,6 +8,7 @@ import renderHTML from 'react-render-html';
 import moment from 'moment';
 import SmallCard from '../../components/blog/SmallCard';
 import DisqusThread from '../../components/DisqusThread';
+import '../../static/css/styles.scss';
 
 const SingleBlog = ({ blog, query }) => {
     const [related, setRelated] = useState([]);
@@ -46,14 +47,14 @@ const SingleBlog = ({ blog, query }) => {
     const showBlogCategories = blog =>
         blog.categories.map((c, i) => (
             <Link key={i} href={`/categories/${c.slug}`}>
-                <a className="btn btn-primary mr-1 ml-1 mt-3">{c.name}</a>
+                <a className="btn btn-warning mr-1 ml-1 mt-3">{c.name}</a>
             </Link>
         ));
 
     const showBlogTags = blog =>
         blog.tags.map((t, i) => (
             <Link key={i} href={`/tags/${t.slug}`}>
-                <a className="btn btn-outline-primary mr-1 ml-1 mt-3">{t.name}</a>
+                <a className="btn btn-outline-warning mr-1 ml-1 mt-3">{t.name}</a>
             </Link>
         ));
 
@@ -81,7 +82,7 @@ const SingleBlog = ({ blog, query }) => {
             <Layout>
                 <main>
                     <article>
-                        <div className="container-fluid">
+                        <div className="container-fluid blog-title">
                             <section>
                                 <div className="row" style={{ marginTop: '-30px' }}>
                                     <img
@@ -95,10 +96,10 @@ const SingleBlog = ({ blog, query }) => {
                             <section>
                                 <div className="container">
                                     <h1 className="display-2 pb-3 pt-3 text-center font-weight-bold">{blog.title}</h1>
-                                    <p className="lead mt-3 mark">
+                                    <p className="lead ml-1 pt-1 pb-1 pr-2 pl-2 mark-container">
                                         Written by{' '}
                                         <Link href={`/profile/${blog.postedBy.username}`}>
-                                            <a>{blog.postedBy.username}</a>
+                                            <a className="link-formatting">{blog.postedBy.username}</a>
                                         </Link>{' '}
                                         | Published {moment(blog.updatedAt).fromNow()}
                                     </p>
@@ -114,13 +115,13 @@ const SingleBlog = ({ blog, query }) => {
                         </div>
 
                         <div className="container">
-                            <section>
+                            <section className="blog-text-container">
                                 <div className="col-md-12 lead">{renderHTML(blog.body)}</div>
                             </section>
                         </div>
 
                         <div className="container">
-                            <h4 className="text-center pt-5 pb-5 h2">Related Posts</h4>
+                            <h4 className="blog-title text-center pt-5 pb-5 h2">Related Posts</h4>
                             <div className="row">{showRelatedBlog()}</div>
                         </div>
 

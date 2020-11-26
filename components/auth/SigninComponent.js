@@ -71,8 +71,11 @@ const SigninComponent = () => {
                     />
                 </div>
 
-                <div>
-                    <button className="btn btn-primary">Signin</button>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <button className="btn btn-warning">Signin</button>
+                    <Link href="/auth/password/forgot">
+                        <a className="btn btn-danger">Forgot password</a>
+                    </Link>
                 </div>
             </form>
         );
@@ -86,9 +89,7 @@ const SigninComponent = () => {
             <LoginGoogle />
             {showForm && signinForm()}
             <br />
-            <Link href="/auth/password/forgot">
-                <a className="btn btn-outline-danger btn-sm">Forgot password</a>
-            </Link>
+
         </React.Fragment>
     );
 };

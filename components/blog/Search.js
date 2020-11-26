@@ -3,6 +3,7 @@ import renderHTML from 'react-render-html';
 import {useState, useEffect} from 'react';
 import {listSearch} from '../../actions/blog';
 import { withRouter } from 'next/router';
+import '../../static/css/styles.scss';
 
 const Search = () => {
   const [values, setValues] = useState({
@@ -27,7 +28,7 @@ const Search = () => {
 
   const searchedBlogs = (results = []) => {
     return (
-      <div className="jumbotron bg-white">
+      <div className="jumbotron example3">
         {message && <p className="pt-4 text-muted font-italic">{message}</p>}
 
         {results.map((blog, i) => {
@@ -51,7 +52,7 @@ const Search = () => {
         </div>
 
         <div className="col-md-4">
-          <button className="btn btn-block btn-outline-primary" type="submit">
+          <button className="btn btn-block btn-outline-warning" type="submit">
             Search
           </button>
         </div>

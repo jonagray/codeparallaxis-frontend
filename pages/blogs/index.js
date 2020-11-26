@@ -5,7 +5,8 @@ import Layout from '../../components/Layout';
 import { useState } from 'react';
 import { listBlogsWithCategoriesAndTags } from '../../actions/blog';
 import Card from '../../components/blog/Card';
-import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
+import { API, DOMAIN, APP_NAME } from '../../config';
+import '../../static/css/styles.scss';
 
 const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, router }) => {
     const head = () => (
@@ -50,7 +51,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
 
     const loadMoreButton = () => {
         return (
-            size > 0 && size >= limit && (<button className="bt btn-outline-primary btn-lg" onClick={loadMore}>Load more</button>)
+            size > 0 && size >= limit && (<button className="bt btn-outline-warning btn-lg" onClick={loadMore}>Load more</button>)
         );
     };
 
@@ -68,7 +69,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
     const showAllCategories = () => {
         return categories.map((c, i) => (
             <Link href={`/categories/${c.slug}`} key={i}>
-                <a className="btn btn-primary mr-1 ml-1 mt-3">{c.name}</a>
+                <a className="btn btn-warning mr-1 ml-1 mt-3">{c.name}</a>
             </Link>
         ));
     };
@@ -76,7 +77,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
     const showAllTags = () => {
         return tags.map((t, i) => (
             <Link href={`/tags/${t.slug}`} key={i}>
-                <a className="btn btn-outline-primary mr-1 ml-1 mt-3">{t.name}</a>
+                <a className="btn btn-outline-warning mr-1 ml-1 mt-3">{t.name}</a>
             </Link>
         ));
     };
@@ -97,7 +98,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                     <div className="container-fluid">
                         <header>
                             <div className="col-md-12 pt-3">
-                                <h1 className="display-4 font-weight-bold text-center">
+                                <h1 className="display-4 font-weight-bold text-center blog-title">
                                     Posts
                                 </h1>
                             </div>

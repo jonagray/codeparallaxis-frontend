@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import { withRouter } from 'next/router';
 import SigninComponent from '../components/auth/SigninComponent';
+import '../static/css/styles.scss';
 
 const Signin = ({ router }) => {
   const showRedirectMessage = () => {
@@ -13,7 +14,7 @@ const Signin = ({ router }) => {
 
   return (
     <Layout>
-      <h2 className="text-center pt-4 pb-4">Signin</h2>
+      <h2 className="text-center pt-4 pb-4 blog-title">Signin</h2>
 
       <div className="row">
         <div className="col-md-6 offset-md-3">
