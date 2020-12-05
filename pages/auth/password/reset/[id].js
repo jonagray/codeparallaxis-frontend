@@ -52,7 +52,7 @@ const ResetPassword = ({ router }) => {
     return (
         <Layout>
             <div className="container">
-                <h2>Reset password</h2>
+                <h2 className="blog-title">Reset password</h2>
                 <hr />
                 {showError()}
                 {showMessage()}

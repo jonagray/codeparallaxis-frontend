@@ -32,6 +32,8 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="/static/css/styles.css" />
           <script dangerouslySetInnerHTML={this.setGoogleTags()}></script>
         </Head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet" />
           <body className="bg-gradient-cold">
             <Main />
             <NextScript />

@@ -50,14 +50,33 @@ $gradients: map-merge((
 // Variables
 $font-size: 42px;
 $small-text-color: #ffffff;
+$title-font-family: 'Pacifico', cursive;
+$title-secondary-font-family: 'Roboto', sans-serif;
 
 .standard-text-formatting {
   color: $small-text-color;
 }
 
+.header-title-styling {
+  font-family: $title-font-family;
+  font-size: 20px;
+  letter-spacing: 1px;
+  transform: rotate(-5deg);
+  cursor: pointer;
+}
+
+.main-title-styling {
+  font-family: $title-font-family;
+  font-size: 50px;
+}
+
+// .button-font-family {
+//   font-family: $title-secondary-font-family;
+// }
+
 .example {
   font-size: $font-size;
-  color: white
+  color: white;
 }
 
 .example2 {
@@ -71,10 +90,16 @@ $small-text-color: #ffffff;
 .header-variables {
   color: white;
   cursor: pointer;
+  font-family: $title-secondary-font-family;
+  font-size: 18px;
 }
 
-.header-text:hover {
-  color: lightcoral;
+.main-page-mark {
+  background-color: rgba(255, 255, 255, .25);  
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  padding: 10px;
+  // color: #f0ad4e;
 }
 
 .mark-container {
@@ -93,8 +118,20 @@ $small-text-color: #ffffff;
   font-style: italic;
 }
 
+.blog-page-title-formatting {
+  font-family: $title-font-family;
+  color: white;
+  font-size: 50px;
+}
+
+// .image-formatting {
+//   height: 20px;
+//   width: 20px;
+// }
+
 .blog-title {
   color: white;
+  font-family: $title-secondary-font-family;
 }
 
 .excerpt-formatting {

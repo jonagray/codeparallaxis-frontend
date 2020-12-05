@@ -8,7 +8,6 @@ import moment from 'moment';
 import Card from '../../components/blog/Card';
 import '../../static/css/styles.scss';
 
-
 const Category = ({ category, blogs, query }) => {
   const head = () => {
     return (<Head>
@@ -37,7 +36,7 @@ const Category = ({ category, blogs, query }) => {
           <div className="container-fluid">
             <header>
               <div className="col-md-12 pt-3">
-                <h1 className="display-4 font-weight-bold blog-title text-center pb-5">{category.name}</h1>
+                <h1 className="display-4 font-weight-bold blog-page-title-formatting text-center pb-5">{category.name}</h1>
                 {blogs.map((b, i) => (
                   <div>
                     <Card key={i} blog={b} />

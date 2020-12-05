@@ -98,8 +98,8 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                     <div className="container-fluid">
                         <header>
                             <div className="col-md-12 pt-3">
-                                <h1 className="display-4 font-weight-bold text-center blog-title">
-                                    Posts
+                                <h1 className="display-4 font-weight-bold text-center blog-page-title-formatting">
+                                   All Posts
                                 </h1>
                             </div>
                             <section>

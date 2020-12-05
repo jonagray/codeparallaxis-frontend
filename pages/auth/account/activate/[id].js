@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import Layout from '../../../../components/Layout';
 import { withRouter } from 'next/router';
 import { signup } from '../../../../actions/auth';
+import '../../static/css/styles.scss';
 
 const ActivateAccount = ({ router }) => {
   const [values, setValues] = useState({
@@ -41,12 +42,12 @@ const ActivateAccount = ({ router }) => {
   return (
     <Layout>
       <div className="container">
-        <h3 className="pb-4">Hello {name}, are you ready to activate your account?</h3>
+        <h3 className="pb-4 blog-title">Hello {name}, are you ready to activate your account?</h3>
         {showLoading()}
         {error && error}
         {success && `You have successfully activated your account. Please sign in.`}
         {showButton && (
-          <button className="btn btn-outline-primary" onClick={clickSubmit}>
+          <button className="btn btn-outline-warning" onClick={clickSubmit}>
             Activate Account
           </button>
         )}
