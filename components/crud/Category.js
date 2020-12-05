@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 import { getCookie } from '../../actions/auth';
 import { create, getCategories, removeCategory } from '../../actions/category';
+import { isAuth } from '../../actions/auth';
 
 const Category = () => {
   const [values, setValues] = useState({
@@ -38,7 +39,7 @@ const Category = () => {
           onDoubleClick={() => deleteConfirm(c.slug)}
           title="Double click to delete"
           key={i}
-          className="btn btn-outline-primary mr-1 ml-1 mt-3"
+          className="btn btn-outline-warning mr-1 ml-1 mt-5"
         >
           {c.name}
         </button>
@@ -47,7 +48,7 @@ const Category = () => {
   };
 
   const deleteConfirm = slug => {
-    let answer = window.confirm('Are you sure you want to delete this category?');
+    let answer = window.confirm('Are you sure you want to delete this category? Only administrators can delete categories and tags.');
     if (answer) {
       deleteCategory(slug);
     }
@@ -103,11 +104,11 @@ const Category = () => {
   const newCategoryForm = () => (
     <form onSubmit={clickSubmit}>
       <div className="form-group">
-        <label className="text-muted">Name</label>
+        <label className="blog-title">Categories</label>
         <input type="text" className="form-control" onChange={handleChange} value={name} required />
       </div>
       <div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-warning">
           Create
         </button>
       </div>
