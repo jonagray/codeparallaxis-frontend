@@ -38,7 +38,7 @@ const Tag = () => {
                     onDoubleClick={() => deleteConfirm(t.slug)}
                     title="Double click to delete"
                     key={i}
-                    className="btn btn-outline-primary mr-1 ml-1 mt-3"
+                    className="btn btn-outline-warning mr-1 ml-1 mt-5"
                 >
                     {t.name}
                 </button>
@@ -103,11 +103,11 @@ const Tag = () => {
     const newTagForm = () => (
         <form onSubmit={clickSubmit}>
             <div className="form-group">
-                <label className="text-muted">Name</label>
+                <label className="blog-title">Tags</label>
                 <input type="text" className="form-control" onChange={handleChange} value={name} required />
             </div>
             <div>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-warning">
                     Create
                 </button>
             </div>
