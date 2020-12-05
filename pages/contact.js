@@ -8,8 +8,8 @@ const Contact = () => {
         <Layout>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-8 offset-md-2 blog-title">
-                        <h2 className="text-center">Contact</h2>
+                    <div className="col-md-8 offset-md-2">
+                        <h2 className="text-center blog-page-title-formatting">Contact</h2>
                         <hr />
                         <ContactForm />
                     </div>

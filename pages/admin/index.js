@@ -8,37 +8,37 @@ const AdminIndex = () => {
         <Layout>
             <Admin>
                 <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-12 pt-5 pb-5 blog-title text-center">
+                    <div className="row justify-content-center">
+                        <div className="col-md-12 pt-5 pb-5 blog-page-title-formatting text-center">
                             <h2>Admin Dashboard</h2>
                         </div>
                         <div className="col-md-4">
                             <ul class="list-group">
-                                <li className="list-group-item dashboard-text-container mb-3">
+                                <li className="list-group-item mb-1">
                                     <Link href="/admin/crud/category-tag">
-                                        <a className="link-formatting font-weight-bold h5">Create a Category</a>
+                                        <a>Create a Category</a>
                                     </Link>
                                 </li>
 
-                                <li className="list-group-item dashboard-text-container mb-3">
+                                <li className="list-group-item mb-1">
                                     <Link href="/admin/crud/category-tag">
-                                        <a className="link-formatting font-weight-bold h5">Create a Tag</a>
+                                        <a>Create a Tag</a>
                                     </Link>
                                 </li>
 
-                                <li className="list-group-item dashboard-text-container mb-3">
-                                    <a href="/admin/crud/blog" className="link-formatting font-weight-bold h5">Create a Post</a>
+                                <li className="list-group-item mb-1">
+                                    <a href="/admin/crud/blog">Create a Post</a>
                                 </li>
 
-                                <li className="list-group-item dashboard-text-container mb-3">
+                                <li className="list-group-item mb-1">
                                     <Link href="/admin/crud/blogs">
-                                        <a className="link-formatting font-weight-bold h5">Update/Delete Post</a>
+                                        <a>Update/Delete Post</a>
                                     </Link>
                                 </li>
 
-                                <li className="list-group-item dashboard-text-container mb-3">
+                                <li className="list-group-item mb-1">
                                     <Link href="/user/update">
-                                        <a className="link-formatting font-weight-bold h5">Update Profile</a>
+                                        <a>Update Profile</a>
                                     </Link>
                                 </li>
                             </ul>

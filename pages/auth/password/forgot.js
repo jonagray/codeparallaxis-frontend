@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from '../../../components/Layout';
 import { forgotPassword } from '../../../actions/auth';
+import '../../../static/css/styles.scss';
 
 const ForgotPassword = () => {
     const [values, setValues] = useState({
@@ -44,7 +45,7 @@ const ForgotPassword = () => {
                 />
             </div>
             <div>
-                <button className="btn btn-primary">Send password reset link</button>
+                <button className="btn btn-warning">Send password reset link</button>
             </div>
         </form>
     );
@@ -52,7 +53,7 @@ const ForgotPassword = () => {
     return (
         <Layout>
             <div className="container">
-                <h2>Forgot password</h2>
+                <h2 className="blog-page-title-formatting">Forgot password</h2>
                 <hr />
                 {showError()}
                 {showMessage()}

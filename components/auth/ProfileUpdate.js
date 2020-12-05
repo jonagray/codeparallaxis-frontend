@@ -4,6 +4,7 @@ import Router from 'next/router';
 import { getCookie, isAuth, updateUser } from '../../actions/auth';
 import { getProfile, update } from '../../actions/user';
 import { API } from '../../config';
+import '../../static/css/styles.scss';
 
 const ProfileUpdate = () => {
   const [values, setValues] = useState({
@@ -90,29 +91,29 @@ const ProfileUpdate = () => {
   const profileUpdateForm = () => (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label className="btn btn-outline-info">
-          Profile photo
+        <label className="btn btn-outline-warning">
+          Update Profile photo
           <input onChange={handleChange('photo')} type="file" accept="image/*" hidden />
         </label>
       </div>
 
       <div className="form-group">
-        <label className="text-muted">Username</label>
+        <label className="blog-title">Username</label>
         <input onChange={handleChange('username')} type="text" value={username} className="form-control" />
       </div>
 
       <div className="form-group">
-        <label className="text-muted">Name</label>
+        <label className="blog-title">Name</label>
         <input onChange={handleChange('name')} type="text" value={name} className="form-control" />
       </div>
 
       <div className="form-group">
-        <label className="text-muted">About</label>
+        <label className="blog-title">About</label>
         <textarea onChange={handleChange('about')} type="text" value={about} className="form-control" />
       </div>
 
       <div className="form-group">
-        <label className="text-muted">Password</label>
+        <label className="blog-title">Password</label>
         <input onChange={handleChange('password')} type="password" value={password} className="form-control" />
       </div>
 
@@ -123,7 +124,7 @@ const ProfileUpdate = () => {
       </div>
 
       <div>
-        <button type="submit" className="btn btn-primary" disabled={!username || !name || !email}>
+        <button type="submit" className="btn btn-warning" disabled={!username || !name || !email}>
           Update
         </button>
       </div>

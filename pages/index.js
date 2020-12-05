@@ -38,7 +38,7 @@ const Index = () => {
                         <div className="col-md-8">
                             <div className="flip flip-horizontal">
                                 <div
-                                    className="front flex-fill"
+                                    className="front"
                                     style={{
                                         height: 455,
                                         backgroundImage:
@@ -47,7 +47,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1">About</h2>
+                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Programming Concepts</h2>
                                 </div>
                                 <div style={{height: 455}} className="back text-center">
                                     <Link href="/categories/react">
@@ -71,7 +71,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1">Frameworks</h2>
+                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">About</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/node">
@@ -96,7 +96,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1">CS Concepts</h2>
+                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Data Structures</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/nextjs">
@@ -138,7 +138,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1">About</h2>
+                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Frameworks</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/react">
@@ -162,7 +162,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1">Frameworks</h2>
+                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Interviewing</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/node">
@@ -188,7 +188,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1">CS Concepts</h2>
+                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Code Challenges</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/nextjs">

@@ -14,7 +14,7 @@ const Signin = ({ router }) => {
 
   return (
     <Layout>
-      <h2 className="text-center pt-4 pb-4 blog-title">Signin</h2>
+      <h2 className="text-center pt-4 pb-4 blog-page-title-formatting">Signin</h2>
 
       <div className="row">
         <div className="col-md-6 offset-md-3">
