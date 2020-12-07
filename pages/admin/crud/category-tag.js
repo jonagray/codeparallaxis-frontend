@@ -3,7 +3,7 @@ import Admin from '../../../components/auth/Admin';
 import Category from '../../../components/crud/Category';
 import Tag from '../../../components/crud/Tag';
 import Link from 'next/link';
-import '../../static/css/styles.scss';
+import '../../../static/css/styles.scss';
 
 const CategoryTag = () => {
     return (
