@@ -74,6 +74,32 @@ $title-secondary-font-family: 'Roboto', sans-serif;
 //   font-family: $title-secondary-font-family;
 // }
 
+.testing-visual {
+  // border: red;
+  // border-style: dashed;
+  // size: 5px;
+}
+
+.category-styling {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.child-button {
+  align-self: flex-end;
+}
+
+.show-more {
+  color: white !important;
+  font-size: 12px;
+  align-self: baseline;
+}
+
+.show-more:hover {
+  color: lightgray !important;
+}
+
 .example {
   font-size: $font-size;
   color: white;

@@ -43,7 +43,7 @@ const Index = () => {
                                         height: 455,
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/multiple-monitors.jpg' +
+                                            '../static/images/seo-blog.jpg' +
                                             ')'
                                     }}
                                 >
@@ -92,7 +92,7 @@ const Index = () => {
                                     style={{
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/seo-blog.jpg' +
+                                            '../static/images/hardware.jpg' +
                                             ')'
                                     }}
                                 >
@@ -158,7 +158,7 @@ const Index = () => {
                                     style={{
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/desk.jpg' +
+                                            '../static/images/interview.jpg' +
                                             ')'
                                     }}
                                 >
@@ -184,7 +184,7 @@ const Index = () => {
                                     style={{
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/seo-blog.jpg' +
+                                            '../static/images/algorithms.jpg' +
                                             ')'
                                     }}
                                 >

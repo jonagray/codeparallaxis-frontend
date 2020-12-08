@@ -4,6 +4,7 @@ import Router from 'next/router';
 import { getCookie, isAuth } from '../../actions/auth';
 import { list, removeBlog } from '../../actions/blog';
 import moment from 'moment';
+import '../../static/css/styles.scss';
 
 const BlogRead = ({ username }) => {
   const [blogs, setBlogs] = useState([]);
@@ -62,9 +63,9 @@ const BlogRead = ({ username }) => {
     return blogs.map((blog, i) => {
       return (
         <div key={i} className="pb-5">
-          <h3>{blog.title}</h3>
-          <p className="mark">
-            Written by {blog.postedBy.name} | Published on {moment(blog.updatedAt).fromNow()}
+          <h3 className="blog-title">{blog.title}</h3>
+          <p className="ml-1 pt-1 pb-1 pr-2 pl-2 main-page-mark">
+            Written by {blog.postedBy.name} | Published {moment(blog.updatedAt).fromNow()}
           </p>
           <button className="btn btn-sm btn-danger" onClick={() => deleteConfirm(blog.slug)}>
             Delete

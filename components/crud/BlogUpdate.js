@@ -11,6 +11,7 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 import '../../node_modules/react-quill/dist/quill.snow.css';
 import { QuillModules, QuillFormats } from '../../helpers/quill';
 import { API } from '../../config';
+import '../../static/css/styles.scss';
 
 const BlogUpdate = ({ router }) => {
     const [body, setBody] = useState('');
@@ -213,9 +214,9 @@ const BlogUpdate = ({ router }) => {
 
     const updateBlogForm = () => {
         return (
-            <form onSubmit={editBlog}>
+            <form className="new-blog-text-container" onSubmit={editBlog}>
                 <div className="form-group">
-                    <label className="text-muted">Title</label>
+                    <label>Title</label>
                     <input type="text" className="form-control" value={title} onChange={handleChange('title')} />
                 </div>
 
@@ -230,7 +231,7 @@ const BlogUpdate = ({ router }) => {
                 </div>
 
                 <div>
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-warning">
                         Update
                     </button>
                 </div>
@@ -254,17 +255,17 @@ const BlogUpdate = ({ router }) => {
                     )}
                 </div>
 
-                <div className="col-md-4">
+                <div className="col-md-4 tag-blog-text-container">
                     <div>
                         <div className="form-group pb-2">
                             <h5>Featured image</h5>
                             <hr />
-                            <small className="text-muted">Max size: 1mb</small>
                             <br />
-                            <label className="btn btn-outline-info">
+                            <label className="btn btn-warning mr-3">
                                 Upload featured image
                                 <input onChange={handleChange('photo')} type="file" accept="image/*" hidden />
                             </label>
+                            <small className="text-muted h6">Max size: 1mb</small>
                         </div>
                     </div>
                     <div>

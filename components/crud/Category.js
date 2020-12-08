@@ -76,7 +76,7 @@ const Category = () => {
   };
 
   const handleChange = e => {
-    setValues({ ...values, name: e.target.value, error: false, success: false, removed: '' });
+    setValues({ ...values, name: e.target.value.toLowerCase(), error: false, success: false, removed: '' });
   };
 
   const showSuccess = () => {
