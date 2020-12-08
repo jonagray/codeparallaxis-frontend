@@ -155,7 +155,7 @@ const CreateBlog = ({ router }) => {
     return (
       <form className="new-blog-text-container" onSubmit={publishBlog}>
         <div className="form-group">
-          <label className="text-muted">Title</label>
+          <label>Title</label>
           <input type="text" className="form-control" value={title} onChange={handleChange('title')} />
         </div>
 

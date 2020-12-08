@@ -17,28 +17,23 @@ const UserIndex = () => {
                                 <li className="list-group-item mb-1">
                                     <a href="/user/crud/blog">New Post</a>
                                 </li>
+                                
+                                <li className="list-group-item mb-1">
+                                    <Link href="/user/crud/category-tag">
+                                        <a>New Category/Tag</a>
+                                    </Link>
+                                </li>
 
                                 <li className="list-group-item mb-1">
                                     <Link href="/user/crud/blogs">
-                                        <a>Update/Delete Blog</a>
+                                        <a>Update/Delete Post</a>
                                     </Link>
                                 </li>
 
                                 <li className="list-group-item mb-1">
-                                    <a href="/user/update">Update profile</a>
+                                    <a href="/user/update">Update Profile</a>
                                 </li>
 
-                                <li className="list-group-item mb-1">
-                                    <Link href="/user/crud/category-tag">
-                                        <a>Create a Category</a>
-                                    </Link>
-                                </li>
-
-                                <li className="list-group-item mb-1">
-                                    <Link href="/user/crud/category-tag">
-                                        <a>Create a Tag</a>
-                                    </Link>
-                                </li>
                             </ul>
                         </div>
                     </div>

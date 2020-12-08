@@ -2,11 +2,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import Layout from '../../components/Layout';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { listBlogsWithCategoriesAndTags } from '../../actions/blog';
 import Card from '../../components/blog/Card';
 import { API, DOMAIN, APP_NAME } from '../../config';
 import '../../static/css/styles.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faArrowCircleDown, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, totalCategories, categoriesLimit, categoriesSkip, totalTags, tagsLimit, tagsSkip, router }) => {
     const head = () => (
@@ -89,19 +91,19 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
 
     const loadMoreButton = () => {
         return (
-            size > 0 && size >= limit && (<button className="bt btn-outline-warning btn-lg" onClick={loadMore}>Load more</button>)
+            size > 0 && size >= limit && (<button className="bt btn-outline-warning btn-sm" onClick={loadMore}>Load more</button>)
         );
     };
 
     const loadMoreCategoriesButton = () => {
         return (
-            categoriesSize > 0 && categoriesSize >= limitCategories && (<button className="bt btn-outline-warning btn-sm" onClick={loadMoreCategories}>Load all categories</button>)
+            categoriesSize > 0 && categoriesSize >= limitCategories && (<a className="btn btn-link show-more" onClick={loadMoreCategories}>More Categories <FontAwesomeIcon className="fontawesome" icon={faCaretDown} color="white" /></a>)
         );
     };
 
     const loadMoreTagsButton = () => {
         return (
-            tagsSize > 0 && tagsSize >= limitTags && (<button className="bt btn-warning btn-sm" onClick={loadMoreTags}>Load all tags</button>)
+            tagsSize > 0 && tagsSize >= limitTags && (<a className="btn btn-link show-more" onClick={loadMoreTags}>More Tags <FontAwesomeIcon className="fontawesome" icon={faCaretDown} color="white" /></a>)
         );
     };
 
@@ -168,22 +170,21 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
                                     All Posts
                                 </h1>
                             </div>
-                            <section>
-                                {/* <div className="pb-5 text-center">
+                            <section className="text-center">
+                                <div className="category-styling">
                                     {showAllCategories()}
-                                    {loadMoreCategoriesButton()}
-                                    <br />
-                                    {showAllTags()}
-                                </div> */}
+                                    {showLoadedCategories()}
+                                    <div className="child-button">
+                                        {loadMoreCategoriesButton()}
+                                    </div>
+                                </div>
 
-                                <div className="pb-5 text-center">
-                                {showAllCategories()}
-                                {showLoadedCategories()}
-                                {loadMoreCategoriesButton()}
-                                <br />
-                                {showAllTags()}
-                                {showLoadedTags()}
-                                {loadMoreTagsButton()}
+                                <div className="category-styling">
+                                    {showAllTags()}
+                                    {showLoadedTags()}
+                                    <div className="child-button">
+                                        {loadMoreTagsButton()}
+                                    </div>
                                 </div>
 
                             </section>
@@ -218,7 +219,7 @@ Blogs.getInitialProps = () => {
     let numOfCategories = 2;
     let numOfTags = 2;
 
-    return listBlogsWithCategoriesAndTags(skip, skipCategories, skipTags, limit, numOfCategories, numOfTags).then(data => {
+    return listBlogsWithCategoriesAndTags(skip, limit, skipCategories, skipTags, numOfCategories, numOfTags).then(data => {
         if (data.error) {
             console.log(data.error);
         } else {
