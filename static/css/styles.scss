@@ -70,16 +70,6 @@ $title-secondary-font-family: 'Roboto', sans-serif;
   font-size: 50px;
 }
 
-// .button-font-family {
-//   font-family: $title-secondary-font-family;
-// }
-
-.testing-visual {
-  // border: red;
-  // border-style: dashed;
-  // size: 5px;
-}
-
 .category-styling {
   display: flex;
   justify-content: center;
@@ -125,7 +115,6 @@ $title-secondary-font-family: 'Roboto', sans-serif;
   backdrop-filter: blur(5px);
   border-radius: 5px;
   padding: 10px;
-  // color: #f0ad4e;
 }
 
 .mark-container {
@@ -136,11 +125,15 @@ $title-secondary-font-family: 'Roboto', sans-serif;
 
 .mark-formatting {
   color: $small-text-color;
-  // font-weight: bold;
 }
 
 .link-formatting {
   color: #f0ad4e;
+  font-style: italic;
+}
+
+.flip-link-formatting {
+  color: white;
   font-style: italic;
 }
 
@@ -149,11 +142,6 @@ $title-secondary-font-family: 'Roboto', sans-serif;
   color: white;
   font-size: 50px;
 }
-
-// .image-formatting {
-//   height: 20px;
-//   width: 20px;
-// }
 
 .blog-title {
   color: white;
@@ -197,6 +185,10 @@ $title-secondary-font-family: 'Roboto', sans-serif;
 
 .flex-fill {
   height: 100%;
+}
+
+.main-image {
+  background-position: top;
 }
 
 // doesnt import everything correctly, style hard-coded
