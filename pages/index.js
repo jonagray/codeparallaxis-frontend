@@ -16,23 +16,6 @@ const Index = () => {
                     </div>
                 </div> */}
 
-
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12 text-center pt-2 pb-2">
-                            {/* <p className="lead">
-                                Parallax - the effect whereby the position or direction of an object appears to differ when viewed from different positions.
-                            </p> */}
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                 {/* Start of boxes */}
-
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-8">
@@ -43,19 +26,21 @@ const Index = () => {
                                         height: 455,
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/seo-blog.jpg' +
+                                            '../static/images/programming-concepts.jpg' +
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Programming Concepts</h2>
+                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Programming Concepts</h2>
                                 </div>
-                                <div style={{height: 455}} className="back text-center">
-                                    <Link href="/categories/react">
-                                        <a className="link-formatting">
-                                            <h3 className="h1">Code Parallaxis</h3>
+                                <div style={{ height: 455 }} className="back text-center">
+                                    <Link href="/categories/programming-concepts">
+                                        <a>
+                                            <h3 className="h1">Programming Concepts</h3>
                                         </a>
                                     </Link>
-                                    <p className="lead">Parallax - the effect whereby the position or direction of an object appears to differ when viewed from different positions</p>
+                                    <p className="lead">What is binary? How would you perform shell scripting? Programming concepts that help make sense of how a program actually works go here!</p>
+                                    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+                                    <a className="text-center text-muted" href="https://www.vecteezy.com/free-vector/machine-learning">Machine Learning Vectors by Vecteezy</a>
                                 </div>
                             </div>
                         </div>
@@ -67,24 +52,25 @@ const Index = () => {
                                     style={{
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/desk.jpg' +
+                                            '../static/images/about.jpg' +
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">About</h2>
+                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">About</h2>
                                 </div>
                                 <div className="back text-center">
-                                    <Link href="/categories/node">
-                                        <a className="link-formatting">
-                                            <h3 className="h1">JavaScript Tools</h3>
+                                    <Link href="https://www.linkedin.com/in/jonny-graybill">
+                                        <a>
+                                            <h3 className="h1">About</h3>
                                         </a>
                                     </Link>
                                     <p className="lead">
-                                        ReactJS, NextJS, NodeJS, etc...
+                                        Parallax - the effect whereby the position or direction of an object appears to differ when viewed from different positions. This blog is dedicated to everything programming and computer-related.
                                     </p>
+                                    <br />
+                                    <a className="text-center text-muted" href="https://www.vecteezy.com/free-vector/icons">Icons Vectors by Vecteezy</a>
                                 </div>
                             </div>
-                        
 
                             <div className="flip flip-horizontal">
                                 <div
@@ -92,39 +78,28 @@ const Index = () => {
                                     style={{
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/hardware.jpg' +
+                                            '../static/images/data-structures.jpg' +
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Data Structures</h2>
+                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Data Structures</h2>
                                 </div>
                                 <div className="back text-center">
-                                    <Link href="/categories/nextjs">
-                                        <a className="link-formatting">
+                                    <Link href="/categories/data-structures">
+                                        <a>
                                             <h3 className="h1">Data Structures</h3>
                                         </a>
                                     </Link>
                                     <p className="lead">Algorithms and core concepts critical to learning how data is stored and behaves</p>
+                                    <br />
+                                    <br />
+                                    <a className="text-center text-muted" href="https://www.vecteezy.com/free-vector/programming">Programming Vectors by Vecteezy</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-
-
-                {/* // Original */}
-
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12 text-center pt-2 pb-2">
-                            {/* <p className="lead">
-                                Parallax - the effect whereby the position or direction of an object appears to differ when viewed from different positions.
-                            </p> */}
-                        </div>
-                    </div>
-                </div>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-4">
@@ -134,19 +109,23 @@ const Index = () => {
                                     style={{
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/multiple-monitors.jpg' +
+                                            '../static/images/frameworks.jpg' +
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Frameworks</h2>
+                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Frameworks</h2>
                                 </div>
                                 <div className="back text-center">
-                                    <Link href="/categories/react">
-                                        <a className="link-formatting">
-                                            <h3 className="h1">Code Parallaxis</h3>
+                                    <Link href="/categories/frameworks">
+                                        <a>
+                                            <h3 className="h1">Frameworks</h3>
                                         </a>
                                     </Link>
-                                    <p className="lead">Parallax - the effect whereby the position or direction of an object appears to differ when viewed from different positions</p>
+                                    <p className="lead">React, Next, Redux, Angular, Vue, Gatsby, etc..., and any other popular coding framework</p>
+                                    <br />
+                                    <br />
+                                    <a className="text-center text-muted" href="https://www.vecteezy.com/free-vector/computer">Computer Vectors by Vecteezy</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -158,21 +137,24 @@ const Index = () => {
                                     style={{
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/interview.jpg' +
+                                            '../static/images/interviewing.jpg' +
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Interviewing</h2>
+                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Interviewing</h2>
                                 </div>
                                 <div className="back text-center">
-                                    <Link href="/categories/node">
-                                        <a className="link-formatting">
-                                            <h3 className="h1">JavaScript Tools</h3>
+                                    <Link href="/categories/interviewing">
+                                        <a>
+                                            <h3 className="h1">Interviewing</h3>
                                         </a>
                                     </Link>
                                     <p className="lead">
-                                        ReactJS, NextJS, NodeJS, etc...
+                                        Interview tips, techniques, etiquette, and things you should know or do going into the event
                                     </p>
+                                    <br />
+                                    <br />
+                                    <a className="text-center text-muted" href="https://www.vecteezy.com/free-vector/planning">Planning Vectors by Vecteezy</a>
                                 </div>
                             </div>
                         </div>
@@ -184,19 +166,22 @@ const Index = () => {
                                     style={{
                                         backgroundImage:
                                             'url(' +
-                                            '../static/images/algorithms.jpg' +
+                                            '../static/images/code-challenges.jpg' +
                                             ')'
                                     }}
                                 >
-                                    <h2 className="text-shadow text-center h1 main-title-styling main-page-mark">Code Challenges</h2>
+                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Code Challenges</h2>
                                 </div>
                                 <div className="back text-center">
-                                    <Link href="/categories/nextjs">
-                                        <a className="link-formatting">
-                                            <h3 className="h1">Data Structures</h3>
+                                    <Link href="/categories/code-challenges">
+                                        <a>
+                                            <h3 className="h1">Code Challenges</h3>
                                         </a>
                                     </Link>
-                                    <p className="lead">Algorithms and core concepts critical to learning how data is stored and behaves</p>
+                                    <p className="lead">Common problems seen in whiteboarding interviews and how to solve them</p>
+                                    <br />
+                                    <br />
+                                    <a className="text-center text-muted" href="https://www.vecteezy.com/free-vector/technology">Technology Vectors by Vecteezy</a>
                                 </div>
                             </div>
                         </div>

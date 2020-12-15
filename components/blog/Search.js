@@ -29,13 +29,13 @@ const Search = () => {
   const searchedBlogs = (results = []) => {
     return (
       <div className="jumbotron example3">
-        {message && <p className="pt-4 text-muted font-italic">{message}</p>}
+        {message && <p className="pt-4 font-italic" style={{color: 'white'}}>{message}</p>}
 
         {results.map((blog, i) => {
           return (
             <div key={i}>
               <Link href={`/blogs/${blog.slug}`}>
-                <a className="text-primary">{blog.title}</a>
+                <a className="link-formatting">{blog.title}</a>
               </Link>
             </div>
           );
