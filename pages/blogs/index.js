@@ -8,9 +8,9 @@ import Card from '../../components/blog/Card';
 import { API, DOMAIN, APP_NAME } from '../../config';
 import '../../static/css/styles.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faArrowCircleDown, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
-const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, totalCategories, categoriesLimit, categoriesSkip, totalTags, tagsLimit, tagsSkip, router }) => {
+const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, router }) => {
     const head = () => (
         <Head>
             <title>Programming blogs | {APP_NAME}</title>
@@ -34,21 +34,9 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
     );
 
     const [limit, setLimit] = useState(blogsLimit);
-    const [limitCategories, setLimitCategories] = useState(categoriesLimit);
-    const [limitTags, setLimitTags] = useState(tagsLimit);
-
     const [skip, setSkip] = useState(0);
-    const [skipCategories, setSkipCategories] = useState(0);
-    const [skipTags, setSkipTags] = useState(0);
-
     const [size, setSize] = useState(totalBlogs);
-    const [categoriesSize, setCategoriesSize] = useState(totalCategories);
-    const [tagsSize, setTagsSize] = useState(totalTags);
-
     const [loadedBlogs, setLoadedBlogs] = useState([]);
-    const [loadedCategories, setLoadedCategories] = useState([]);
-    const [loadedTags, setLoadedTags] = useState([]);
-
 
     const loadMore = () => {
         let toSkip = skip + limit;
@@ -63,47 +51,9 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
         });
     };
 
-    const loadMoreCategories = () => {
-        let categoriesToSkip = skipCategories + limitCategories;
-        listBlogsWithCategoriesAndTags(categoriesToSkip, limitCategories).then(data => {
-            if (data.error) {
-                console.log(data.error)
-            } else {
-                setLoadedCategories([...loadedCategories, ...data.categories]);
-                setCategoriesSize(data.size);
-                setSkipCategories(categoriesToSkip);
-            }
-        });
-    };
-
-    const loadMoreTags = () => {
-        let tagsToSkip = skipTags + limitTags;
-        listBlogsWithCategoriesAndTags(tagsToSkip, limitTags).then(data => {
-            if (data.error) {
-                console.log(data.error)
-            } else {
-                setLoadedTags([...loadedTags, ...data.tags]);
-                setTagsSize(data.size);
-                setSkipTags(tagsToSkip);
-            }
-        });
-    };
-
     const loadMoreButton = () => {
         return (
             size > 0 && size >= limit && (<button className="bt btn-outline-warning btn-sm" onClick={loadMore}>Load more</button>)
-        );
-    };
-
-    const loadMoreCategoriesButton = () => {
-        return (
-            categoriesSize > 0 && categoriesSize >= limitCategories && (<a className="btn btn-link show-more" onClick={loadMoreCategories}>More Categories <FontAwesomeIcon className="fontawesome" icon={faCaretDown} color="white" /></a>)
-        );
-    };
-
-    const loadMoreTagsButton = () => {
-        return (
-            tagsSize > 0 && tagsSize >= limitTags && (<a className="btn btn-link show-more" onClick={loadMoreTags}>More Tags <FontAwesomeIcon className="fontawesome" icon={faCaretDown} color="white" /></a>)
         );
     };
 
@@ -118,22 +68,6 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
         });
     };
 
-    const showAllCategories = () => {
-        return categories.slice(0, 3).map((c, i) => (
-            <Link href={`/categories/${c.slug}`} key={i}>
-                <a className="btn btn-warning mr-1 ml-1 mt-3">{c.name}</a>
-            </Link>
-        ));
-    };
-
-    const showAllTags = () => {
-        return tags.slice(0, 3).map((t, i) => (
-            <Link href={`/tags/${t.slug}`} key={i}>
-                <a className="btn btn-outline-warning mr-1 ml-1 mt-3">{t.name}</a>
-            </Link>
-        ));
-    };
-
     const showLoadedBlogs = () => {
         return loadedBlogs.map((blog, i) => (
             <article key={i}>
@@ -142,16 +76,16 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
         ));
     };
 
-    const showLoadedCategories = () => {
-        return loadedCategories.slice(3).map((c, i) => (
+    const showAllCategories = () => {
+        return categories.map((c, i) => (
             <Link href={`/categories/${c.slug}`} key={i}>
                 <a className="btn btn-warning mr-1 ml-1 mt-3">{c.name}</a>
             </Link>
         ));
     };
 
-    const showLoadedTags = () => {
-        return loadedTags.slice(3).map((t, i) => (
+    const showAllTags = () => {
+        return tags.map((t, i) => (
             <Link href={`/tags/${t.slug}`} key={i}>
                 <a className="btn btn-outline-warning mr-1 ml-1 mt-3">{t.name}</a>
             </Link>
@@ -171,23 +105,14 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
                                 </h1>
                             </div>
                             <section className="text-center">
-                                <div className="category-styling">
+                                <div className="container-fluid">
                                     {showAllCategories()}
-                                    {showLoadedCategories()}
-                                    <div className="child-button">
-                                        {loadMoreCategoriesButton()}
-                                    </div>
                                 </div>
-
-                                <div className="category-styling">
+                                <div className="container-fluid">
                                     {showAllTags()}
-                                    {showLoadedTags()}
-                                    <div className="child-button">
-                                        {loadMoreTagsButton()}
-                                    </div>
                                 </div>
-
                             </section>
+
                         </header>
                     </div>
 
@@ -195,6 +120,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
 
                     <div className="container-fluid">
                         {showAllBlogs()}
+
                     </div>
 
                     <div className="container-fluid">
@@ -212,14 +138,9 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, tota
 
 Blogs.getInitialProps = () => {
     let skip = 0;
-    let skipCategories = 0;
-    let skipTags = 0;
-
     let limit = 2;
-    let numOfCategories = 2;
-    let numOfTags = 2;
 
-    return listBlogsWithCategoriesAndTags(skip, limit, skipCategories, skipTags, numOfCategories, numOfTags).then(data => {
+    return listBlogsWithCategoriesAndTags(skip, limit).then(data => {
         if (data.error) {
             console.log(data.error);
         } else {
@@ -231,14 +152,6 @@ Blogs.getInitialProps = () => {
                 totalBlogs: data.size,
                 blogsLimit: limit,
                 blogSkip: skip,
-
-                totalCategories: data.size,
-                categoriesLimit: numOfCategories,
-                categoriesSkip: skipCategories,
-
-                totalTags: data.size,
-                tagsLimit: numOfTags,
-                tagsSkip: skipTags
             };
         }
     });
