@@ -21,7 +21,7 @@ const Index = () => {
                         <div className="col-md-8">
                             <div className="flip flip-horizontal">
                                 <div
-                                    className="front"
+                                    className="front text-center"
                                     style={{
                                         height: 455,
                                         backgroundImage:
@@ -30,7 +30,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Programming Concepts</h2>
+                                    <h2 className="text-shadow h1 main-title-styling">Programming Concepts</h2>
                                 </div>
                                 <div style={{ height: 455 }} className="back text-center">
                                     <Link href="/categories/programming-concepts">
@@ -48,7 +48,7 @@ const Index = () => {
                         <div className="col-md-4">
                             <div className="flip flip-horizontal">
                                 <div
-                                    className="front"
+                                    className="front text-center"
                                     style={{
                                         backgroundImage:
                                             'url(' +
@@ -56,7 +56,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">About</h2>
+                                    <h2 className="text-shadow h1 main-title-styling">About</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="https://www.linkedin.com/in/jonny-graybill">
@@ -74,7 +74,7 @@ const Index = () => {
 
                             <div className="flip flip-horizontal">
                                 <div
-                                    className="front"
+                                    className="front text-center"
                                     style={{
                                         backgroundImage:
                                             'url(' +
@@ -82,7 +82,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Data Structures</h2>
+                                    <h2 className="text-shadow h1 main-title-styling">Data Structures</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/data-structures">
@@ -105,7 +105,7 @@ const Index = () => {
                         <div className="col-md-4">
                             <div className="flip flip-horizontal">
                                 <div
-                                    className="front"
+                                    className="front text-center"
                                     style={{
                                         backgroundImage:
                                             'url(' +
@@ -113,7 +113,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Frameworks</h2>
+                                    <h2 className="text-shadow h1 main-title-styling">Frameworks</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/frameworks">
@@ -133,7 +133,7 @@ const Index = () => {
                         <div className="col-md-4">
                             <div className="flip flip-horizontal">
                                 <div
-                                    className="front"
+                                    className="front text-center"
                                     style={{
                                         backgroundImage:
                                             'url(' +
@@ -141,7 +141,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Interviewing</h2>
+                                    <h2 className="text-shadow h1 main-title-styling">Interviewing</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/interviewing">
@@ -162,7 +162,7 @@ const Index = () => {
                         <div className="col-md-4">
                             <div className="flip flip-horizontal">
                                 <div
-                                    className="front"
+                                    className="front text-center"
                                     style={{
                                         backgroundImage:
                                             'url(' +
@@ -170,7 +170,7 @@ const Index = () => {
                                             ')'
                                     }}
                                 >
-                                    <h2 style={{ color: "#f0ad4e" }} className="text-shadow h1 main-title-styling">Code Challenges</h2>
+                                    <h2 className="text-shadow h1 main-title-styling">Code Challenges</h2>
                                 </div>
                                 <div className="back text-center">
                                     <Link href="/categories/code-challenges">
